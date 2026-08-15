@@ -14,7 +14,7 @@ Interaktivní webová aplikace vytvořená pro studenty k zábavnému procvičov
 
 ## 🚀 Jak aplikaci spustit
 Aplikace běží jako statický web, takže není potřeba nic instalovat. 
-Stačí kliknout na tento odkaz: **[DOPLŇ SVŮJ ODKAZ NA GITHUB PAGES]**
+Stačí kliknout na tento odkaz: **[(https://alesbrejchagit.github.io/Story_Reader/)]**
 
 ## 🛠️ Použité technologie
 * **HTML5**,* **CSS3**,* **JavaScript**
