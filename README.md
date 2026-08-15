@@ -1,4 +1,6 @@
-# Story_Reader - JavaScript applicication for reading EN stories from JSON configuration files
+# Story_Reader 
+
+Shot EN desc: JavaScript applicication for reading EN stories from JSON configuration files
 
 Interaktivní webová aplikace vytvořená pro studenty k zábavnému procvičování čtení a poslechu anlického jazyka. Aplikace spojuje textový příběh s mluveným slovem a dalšími zvukovými efekty, což pomáhá k udržení pozornosti při NEnudné výuce jazyka.
 
