@@ -1,0 +1,99 @@
+{
+  "story_info": {
+    "title": "Jak si zvířata objednala pizzu",
+    "author": "Gemini"
+  },
+  "characters": {
+    "Vypravec": {
+      "default_voice": "en_US-amy-medium.onnx"
+    },
+    "Pes": {
+      "default_voice": "en_US-ryan-medium.onnx"
+    },
+    "Kocka": {
+      "default_voice": "en_US-joe-medium.onnx"
+    }
+  },
+  "timeline": [
+    {
+      "id": 1,
+      "character": "Vypravec",
+      "en_text": "It was a peaceful afternoon until Buster the dog discovered the telephone.",
+      "cz_text": "Byl to klidný okamžik, dokud pes Buster neobjevil telefon.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "stekani_dlouhe.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 2,
+      "character": "Pes",
+      "en_text": "Oh boy, oh boy! A magic ringing bone! Hello? I want a hundred sausages!",
+      "cz_text": "Páni, páni! Kouzelná zvonící kost! Haló? Chci sto párků!",
+      "dramaturgy": "fast",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 3,
+      "character": "Kocka",
+      "en_text": "Put that down, you buffoon. You are speaking to the dial tone.",
+      "cz_text": "Polož to, ty šašku. Mluvíš s oznamovacím tónem.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": "stekani_dlouhe.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 4,
+      "character": "Pes",
+      "en_text": "Mr. Tone says they are out of sausages. What about bacon?",
+      "cz_text": "Pan Tón říká, že jim došly párky. A co slanina?",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 5,
+      "character": "Kocka",
+      "en_text": "Give me that. Hello, human food place? Yes, I require fresh tuna. And an empty box to sit in.",
+      "cz_text": "Dej mi to. Haló, lidská restaurace? Ano, požaduji čerstvého tuňáka. A prázdnou krabici, do které si sednu.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "stekani_dlouhe.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 6,
+      "character": "Vypravec",
+      "en_text": "The local pizzeria was very confused that day.",
+      "cz_text": "Místní pizzerie byla ten den velmi zmatená.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 7,
+      "character": "Pes",
+      "en_text": "Did you order the bacon? I can hear the delivery car! Oh wait, that is just a squirrel.",
+      "cz_text": "Objednala jsi tu slaninu? Slyším rozvozové auto! Oh počkat, to je jen veverka.",
+      "dramaturgy": "fast",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 8,
+      "character": "Kocka",
+      "en_text": "I am surrounded by idiots. I am going back to sleep.",
+      "cz_text": "Jsem obklopena idioty. Jdu zase spát.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": "stekani_dlouhe.mp3",
+      "voice_after": null
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story reader</title>
+    <style>
+        /* CSS KABÁTEK (Zkráceno pro přehlednost, zachován tvůj design) */
+        body { font-family: sans-serif; background: #eef2f6; padding: 20px; display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 900px; background: #f5f7fa; border-radius: 12px; padding: 20px; }
+        .top-controls { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+        .btn-primary { background: #5c6bc0; color: white; border: none; padding: 10px 24px; border-radius: 20px; font-weight: bold; cursor: pointer; margin-left: auto; }
+        .btn-primary:hover { background: #4a569d; }
+        .story-row { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .char-icon { width: 50px; height: 50px; object-fit: contain; }
+        .text-content { flex-grow: 1; }
+        .en-text { font-weight: bold; font-size: 1.1rem; margin: 0 0 5px 0; }
+        .cz-text { color: #6b7280; font-size: 0.9rem; margin: 0; display: none; } /* V základu skryto */
+        .btn-secondary { background: transparent; color: #5c6bc0; border: 2px solid #e5e7eb; padding: 6px 16px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+        .row-checkbox { width: 20px; height: 20px; cursor: pointer; }
+        
+        /* Zašedlé roletky */
+        .character-card { background: white; padding: 15px; border-radius: 12px; margin-bottom: 20px; display: flex; gap: 20px; }
+        select:disabled { background: #f3f4f6; color: #9ca3af; padding: 5px; border-radius: 5px; }
+        
+        /* Zvýraznění právě čteného řádku */
+        .story-row.active-reading {
+            background-color: #eef2ff; /* Jemně modré pozadí */
+            border-left: 5px solid var(--primary-blue, #5c6bc0); /* Výrazná čára vlevo */
+            transform: scale(1.02); /* Řádek se nepatrně zvětší (vystoupí do popředí) */
+            box-shadow: 0 8px 15px rgba(92, 107, 192, 0.15); /* Větší stín */
+            transition: all 0.3s ease; /* Plynulá animace přechodu */
+            z-index: 10;
+        }
+
+        /* Fixní hlavička */
+        /* Tento blok zajistí, že ovládací prvky zůstanou vždy nahoře */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: #f5f7fa; /* Stejná barva jako pozadí aplikace */
+            z-index: 100; /* Bude překrývat rolující řádky s příběhem */
+            padding: 20px 0 10px 0;
+            margin: -20px 0 0 0; /* Vykompenzuje padding kontejneru, aby lícovala k hornímu okraji */
+            border-bottom: 1px solid #e5e7eb; /* Jemná oddělovací čára pro lepší viditelnost na mobilu */
+        }
+        
+        /* =========================================
+           DESIGN PRO MOBILY
+           ========================================= */
+        @media (max-width: 600px) {
+            /* 1. Hlavní kontejner o něco zmenšíme pro víc místa */
+            .app-container { 
+                padding: 15px 10px; 
+            }
+
+            /* Úprava fixní hlavičky pro mobil */
+            .sticky-header {
+                padding: 15px 0 10px 0;
+                margin: -15px 0 0 0;
+            }
+            
+            /* 2. Horní ovládací panel vyskládáme pod sebe */
+            .top-controls { 
+                flex-direction: column; 
+                align-items: stretch; 
+                gap: 10px; 
+            }
+            /* Tlačítka Číst a Vybrat vše budou přes celou šířku */
+            #selectAllBtn, .btn-primary { 
+                margin: 0 !important; 
+                width: 100%; 
+            }
+
+            /* 3. Kartu s postavami také zalomíme */
+            .character-card { 
+                flex-wrap: wrap; 
+                gap: 10px; 
+            }
+            .character-card > div { 
+                width: 45%; /* Postavy se poskládají vedle sebe po dvou */
+            }
+
+            /* 4. OPRAVA ŘÁDKŮ S PŘÍBĚHEM */
+            .story-row {
+                flex-wrap: wrap; /* Klíčová vlastnost: dovolí tlačítku odskočit na nový řádek */
+                gap: 10px;
+                padding: 15px 10px;
+            }
+            .char-icon { 
+                width: 40px; /* Na mobilu obrázek lehce zmenšíme */
+                height: 40px; 
+            }
+            .text-content {
+                /* Textu vnutíme minimální šířku, aby se nesmrsknul do nudle */
+                min-width: 150px;
+                flex: 1 1 calc(100% - 90px);
+            }
+            .btn-secondary {
+                /* Tlačítko překladu spadne dolů pod text a roztáhne se jako velké tlačítko */
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Fixní Hlavička pro ovládací prvky, aby nemizely při rolování -->
+    <div class="sticky-header">
+        <div class="top-controls">
+            <div><strong>Vyberte příběh:</strong> <select id="storySelect" onchange="switchStory()"></select></div>
+            
+            <button class="btn-secondary" id="selectAllBtn" onclick="toggleSelectAll()" style="margin-left: auto;">Vybrat vše</button>
+            <button class="btn-primary" id="playBtn" onclick="playSelected()">ČTI VÝBĚR</button>
+        </div>
+
+        <!--div class="character-card">
+            <div><label>Vypravec:</label> <select disabled><option>EN-Amy</option></select></div>
+            <div><label>Rytir:</label> <select disabled><option>EN-Ryan</option></select></div>
+            <div><label>Drak:</label> <select disabled><option>EN-Joe</option></select></div>
+        </div -->
+    </div>
+
+    <!-- SEM JAVASCRIPT NASYPE ŘÁDKY Z JSONU -->
+    <div id="story-container"></div>
+</div>
+
+<!-- APLIKACE (JavaScript) -->
+<script>
+    // Globální proměnné pro zvuk na pozadí
+    let bgAudio = new Audio();
+    bgAudio.loop = true; // Zajistí nekonečnou smyčku pro pozadí
+    let currentSfx = null;
+    
+    // PROMĚNNÉ PRO STOP TLAČÍTKO
+    let isPlaying = false; 
+    let currentVoiceAudio = null;
+
+    // Globální proměnná, kam si uložíme stažená data příběhu
+    let storyData = [];
+    let storyLibrary = []; 
+    let currentSoundDir = '';
+
+    // === INICIALIZACE ROLETKY Z JSON KNIHOVNY ===
+    async function initStorySelect() {
+        try {
+            // 1. Načtení seznamu pohádek z library_web.json
+            const response = await fetch('data/library_web.json');
+            const data = await response.json();
+            storyLibrary = data.stories; // Uložení pole příběhů do paměti
+
+            // 2. Vyplnění roletky
+            const select = document.getElementById('storySelect');
+            select.innerHTML = ''; 
+            
+            storyLibrary.forEach((story, index) => {
+                select.innerHTML += `<option value="${index}">${story.title}</option>`;
+            });
+            
+            // 3. Automatické načtení první pohádky v seznamu
+            switchStory();
+        } catch (error) {
+            console.error("Chyba při načítání knihovny příběhů:", error);
+            document.getElementById('story-container').innerHTML = '<p style="color:red; text-align:center;">Nepodařilo se načíst seznam pohádek.</p>';
+        }
+    }
+
+    // === PŘEPNUTÍ PŘÍBĚHU ===
+    async function switchStory() {
+        const select = document.getElementById('storySelect');
+        const selectedStory = storyLibrary[select.value];
+        
+        // Nnázev složky se zvuky pro vybraný příběh
+        currentSoundDir = selectedStory.sound_dir; 
+
+        const container = document.getElementById('story-container');
+        container.innerHTML = '<p style="text-align:center;">Načítám příběh...</p>';
+
+        try {
+            // Načtení konkrétního souboru příběhu
+            const response = await fetch(`data/${selectedStory.json_file}`);
+            const data = await response.json();
+            storyData = data.timeline;
+
+            // Vyčistíme kontejner a vykreslíme nové řádky
+            container.innerHTML = ''; 
+
+            // Resetování textu tlačítka Vybrat vše (nové řádky jsou automaticky nezaškrtnuté)
+            document.getElementById('selectAllBtn').innerText = 'Vybrat vše';
+            
+            storyData.forEach((item, index) => {
+                const rowHtml = `
+                    <div class="story-row" id="row-${index}">
+                        <input type="checkbox" class="row-checkbox" data-index="${index}" onchange="updateSelectBtn()">
+                        <img src="img/${item.character}.png" class="char-icon" alt="${item.character}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'50\\' height=\\'50\\'><rect width=\\'50\\' height=\\'50\\' fill=\\'#ccc\\'/></svg>'">
+                        <div class="text-content">
+                            <p class="en-text">${item.en_text}</p>
+                            <p class="cz-text" id="cz-${index}">${item.cz_text}</p>
+                        </div>
+                        <button class="btn-secondary" onclick="toggleTranslation(${index}, this)">Ukázat překlad</button>
+                    </div>
+                `;
+                container.innerHTML += rowHtml;
+            });
+            
+            // Zastavíme případný zvuk z předchozího příběhu
+            bgAudio.pause();
+            currentSfx = null;
+            
+        } catch (error) {
+            container.innerHTML = '<p style="color:red; text-align:center;">Chyba při načítání příběhu.</p>';
+            console.error(error);
+        }
+    }
+
+    // === Překlad ===
+    function toggleTranslation(index, btnElement) {
+        const czText = document.getElementById(`cz-${index}`);
+        if (czText.style.display === 'none' || czText.style.display === '') {
+            czText.style.display = 'block';
+            btnElement.innerText = 'Skrýt překlad';
+        } else {
+            czText.style.display = 'none';
+            btnElement.innerText = 'Ukázat překlad';
+        }
+    }
+
+    // === POMOCNÁ FUNKCE PRO ZVUK ===
+    // Funkce přehraje jeden zvuk a "zastaví kód", dokud zvuk nedohraje.
+    function playAudioAndWait(src) {
+        return new Promise(resolve => {
+            // Pokud není zvuk zadán NEBO jsme stiskli STOP (!isPlaying), rovnou přeskoč
+            if (!src || !isPlaying) {
+                resolve(); 
+                return;
+            }
+            
+            currentVoiceAudio = new Audio(src);
+            currentVoiceAudio.onended = resolve; 
+            currentVoiceAudio.onerror = resolve; 
+            currentVoiceAudio.play();
+        });
+    }
+
+    // === FUNKCE PRO ZASTAVENÍ PŘEHRÁVÁNÍ ===
+    function stopPlaying() {
+        isPlaying = false; // Vypne hlídače
+        
+        // Zastaví zvuk pozadí
+        bgAudio.pause();
+        currentSfx = null;
+        
+        // Zastaví právě mluvící hlas
+        if (currentVoiceAudio) {
+            currentVoiceAudio.pause();
+            currentVoiceAudio = null;
+        }
+        
+        // Vrátí tlačítko do původního stavu
+        const playBtn = document.getElementById('playBtn');
+        playBtn.innerText = 'ČTI VÝBĚR';
+        playBtn.style.backgroundColor = ''; // Vrátí modrou z CSS
+        
+        // Vypne případné modré zvýraznění řádku
+        const activeRows = document.querySelectorAll('.active-reading');
+        activeRows.forEach(row => row.classList.remove('active-reading'));
+        
+        // Znovu povolí tlačítko Vybrat vše (když přehrávání skončí)
+        const selectAllBtn = document.getElementById('selectAllBtn');
+        selectAllBtn.disabled = false;
+        selectAllBtn.style.opacity = '1';
+        selectAllBtn.style.cursor = 'pointer';
+        
+        // Pokud už nezbylo nic zaškrtnutého (dočetlo se do konce), nastaví nápis na "Vybrat vše"
+        const anyChecked = document.querySelector('.row-checkbox:checked');
+        if (!anyChecked) {
+            selectAllBtn.innerText = 'Vybrat vše';
+        }
+
+        // Odemčení výběru příběhu po zastavení
+        document.getElementById('storySelect').disabled = false;
+
+        //  Odemčení všech checkboxů po zastavení přehrávání
+        const allCheckboxes = document.querySelectorAll('.row-checkbox');
+        allCheckboxes.forEach(cb => {
+            cb.disabled = false;
+            cb.style.cursor = 'pointer'; // Vrátí normální kurzor
+        });
+    }
+
+    // === ÚKOL D: Hlavní přehrávač (Spustí se tlačítkem ČTI VÝBĚR) ===
+    async function playSelected() {
+        // Pokud už hrajeme, stisk tlačítka znamená STOP
+        if (isPlaying) {
+            stopPlaying();
+            return;
+        }
+        
+        // Najdeme všechny zaškrtnuté checkboxy
+        const checkboxes = document.querySelectorAll('.row-checkbox:checked');
+        
+        // Ochrana: Pokud uživatel nezaškrtl nic, nepřehráváme vůbec (aby se nezablokovala tlačítka)
+        if (checkboxes.length === 0) return;
+
+        // Začínáme hrát! Zapneme hlídače a změníme tlačítko na červené STOP
+        isPlaying = true;
+        const playBtn = document.getElementById('playBtn');
+        playBtn.innerText = 'STOP';
+        playBtn.style.backgroundColor = '#d32f2f'; 
+        
+        // Zakážeme tlačítko Vybrat vše, aby během vyprávění nešlo kliknout
+        const selectAllBtn = document.getElementById('selectAllBtn');
+        selectAllBtn.disabled = true;
+        selectAllBtn.style.opacity = '0.5'; // Vizuálně ho zašedíme
+        selectAllBtn.style.cursor = 'not-allowed';
+
+        // Zákaz výběru příběhu během přehrávání
+        document.getElementById('storySelect').disabled = true;
+
+        // Zablokování všech checkboxů během přehrávání
+        const allCheckboxesToDisable = document.querySelectorAll('.row-checkbox');
+        allCheckboxesToDisable.forEach(cb => {
+            cb.disabled = true;
+            cb.style.cursor = 'not-allowed'; // Změní kurzor, aby uživatel poznal, že se nesmí klikat
+        });
+      
+
+        // 2. Projdeme všechny zaškrtnuté řádky jeden po druhém
+        for (let checkbox of checkboxes) {
+            if (!isPlaying) break; // Pokud někdo zmáčkl STOP, cyklus se okamžitě přeruší
+
+            let itemIndex = checkbox.getAttribute('data-index');
+            let item = storyData[itemIndex]; // Získáme data konkrétního dialogu
+            
+            // zvýrazni_čtené 1: Najdeme fyzický HTML prvek celého řádku podle jeho ID
+            let rowElement = document.getElementById(`row-${itemIndex}`);
+            
+            // zvýrazni_čtené 2: Zapneme na něm naše nové CSS zvýraznění
+            rowElement.classList.add('active-reading');
+            
+            // zvýrazni_čtené 3: Plynule na něj narolujeme obrazovku 
+            // (block: 'center' zajistí, že řádek bude hezky uprostřed displeje, ne nalepený nahoře)
+            rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // A. Řešení zvuku na pozadí (SFX)
+            if (item.sfx && item.sfx !== currentSfx) {
+                bgAudio.src = `audio/${currentSoundDir}/sfx/${item.sfx}`;
+                bgAudio.play();
+                currentSfx = item.sfx;
+            } else if (!item.sfx && currentSfx) {
+                bgAudio.pause();
+                currentSfx = null;
+            }
+
+            // B. Přehrání hlasů (čeká se na dokončení každého z nich díky slůvku 'await')
+            // Nejdřív zvuk před (např. kroky)
+            if (item.voice_before && isPlaying) {
+                await playAudioAndWait(`audio/${currentSoundDir}/sfx/${item.voice_before}`);
+            }
+            
+            // Hlavní hlas dialogu (použijeme ID z JSONu, např. 1.wav, 2.wav)
+            if (isPlaying) {
+                await playAudioAndWait(`audio/${currentSoundDir}/voice/${item.id}.mp3`);
+            }
+            
+            // Zvuk po (např. útěk)
+            if (item.voice_after && isPlaying) {
+                await playAudioAndWait(`audio/${currentSoundDir}/sfx/${item.voice_after}`);
+            }
+            
+            // zvýrazni_čtené 4: Zvuk pro tento řádek dohrál. Vypneme zvýraznění, než se cyklus posune na další.
+            rowElement.classList.remove('active-reading');
+            
+            // zvýrazni_čtené 5: Odškrtni již přečtené (pouze pokud jsme to reálně dočetli)
+            if (isPlaying) {
+                checkbox.checked = false;
+            }
+            // Jakmile vše dohraje v rámci jednoho řádku, skočí se na další zaškrtnutý řádek.
+            
+        } // konec FOR procházení řádků, které se mají přehrát
+        
+        // C. Když se přehraje úplně všechno (nebo byl stisknut STOP), uklidíme aplikaci
+        stopPlaying();
+    }
+    
+    // === NOVÁ FUNKCE: Automatická změna nápisu při ručním klikání ===
+    function updateSelectBtn() {
+        if (isPlaying) return; // Během přehrávání text neměníme
+        
+        const btn = document.getElementById('selectAllBtn');
+        // Zjistí, jestli existuje alespoň jeden zaškrtnutý checkbox
+        const anyChecked = document.querySelector('.row-checkbox:checked');
+        
+        if (anyChecked) {
+            btn.innerText = 'Zrušit výběr';
+        } else {
+            btn.innerText = 'Vybrat vše';
+        }
+    }
+
+    // === ÚKOL E: Vybrat vše / Zrušit výběr (OPRAVENO) ===
+    function toggleSelectAll() {
+        if (isPlaying) return; // Ochrana proti klikání při přehrávání
+
+        const checkboxes = document.querySelectorAll('.row-checkbox');
+        const btn = document.getElementById('selectAllBtn');
+        
+        // Tlačítko se teď rozhoduje čistě podle toho, co je na něm napsáno
+        if (btn.innerText === 'Zrušit výběr') {
+            // Odškrtni vše
+            checkboxes.forEach(cb => cb.checked = false);
+            btn.innerText = 'Vybrat vše';
+        } else {
+            // Zaškrtni vše
+            checkboxes.forEach(cb => cb.checked = true);
+            btn.innerText = 'Zrušit výběr';
+        }
+    }
+
+
+    // Spuštění načítání dat hned po otevření stránky
+    initStorySelect();
+</script>
+
+</body>
+</html>

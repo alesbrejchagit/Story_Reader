@@ -1,0 +1,282 @@
+{
+  "story_info": {
+    "title": "Kitchen horror: Bob is cooking for Alica's stomach",
+    "author": "Alda"
+  },
+  "characters": {
+    "Vypravec": {
+      "default_voice": "en_US-joe-medium.onnx"
+    },
+    "Alice": {
+      "default_voice": "en_US-lessac-high.onnx"
+    },
+    "AliceStomach": {
+      "default_voice": "en_US-amy-medium.onnx"
+    },
+    "Bob": {
+      "default_voice": "en_US-ryan-medium.onnx"
+    }
+  },
+  "timeline": [
+  {
+    "id": 1,
+    "character": "Vypravec",
+    "cz_text": "Bob a Alice jsou v kuchyni. Bob má na sobě vysokou a vtipnou kuchařskou čepici. Hledá velmi luxusní recept ve velké, těžké knize. Alice sedí u stolu. Dívá se na svůj prázdný talíř. Má obrovský, obrovský hlad. V kuchyni je ticho. Najednou se ozve hlasitý, naštvaný zvuk. Je to Alicin žaludek.",
+    "en_text": "Bob and Alice are in the kitchen. Bob is wearing a tall, funny chef hat. He is looking for a very fancy recipe in a big, heavy book. Alice is sitting at the table. She is looking at her empty plate. She is very, very hungry. The kitchen is quiet. Suddenly, there is a loud, angry noise. It is Alice's stomach.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 2,
+    "character": "Alice",
+    "cz_text": "Hej, šéfe, co je k večeři?",
+    "en_text": "Hey, Chef, what is for dinner?",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 3,
+    "character": "AliceStomach",
+    "cz_text": "Uff, jsem tak prázdný! Nejraději bych snědl Boba.",
+    "en_text": "Ugh, I am so empty! I would like to eat Bob.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 4,
+    "character": "Bob",
+    "cz_text": "No problemo, seňorito. Chci uvařit nějaké jídlo z téhle kuchařky.",
+    "en_text": "No problemo, señorita. I want to cook some food from this recipe book.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 5,
+    "character": "Alice",
+    "cz_text": "Hej, Bobe. To není kuchařka. Je to historický román o lyžování.",
+    "en_text": "Hey, Bob. That is not a recipe book. It is a historical novel about skiing.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 6,
+    "character": "Bob",
+    "cz_text": "Žádný problém! Mám rád dezert s krémem, co vypadá jako sníh.",
+    "en_text": "No problem! I like dessert with cream that looks like snow.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 7,
+    "character": "Vypravec",
+    "cz_text": "Bob vezme velkou mísu. Dá knihu o lyžování do mísy. Podívá se na to a poškrábe se na hlavě. Pak otevře lednici. Vyndá láhev kečupu, sklenici hořčice a velmi starý banán. Alice si položí hlavu na stůl.",
+    "en_text": "Bob takes a big bowl. He puts the skiing book into the bowl. He looks at it and scratches his head. Then, he opens the fridge. He takes out a bottle of ketchup, a jar of mustard, and a very old banana. Alice puts her head on the table.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 8,
+    "character": "Alice",
+    "cz_text": "Proč jsi dal ten román do mísy?",
+    "en_text": "Why did you put the novel into the bowl?",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 9,
+    "character": "Bob",
+    "cz_text": "Chci vědět, jestli se finální produkt vejde do mísy.",
+    "en_text": "I want to know if the final product will fit into the bowl.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 10,
+    "character": "AliceStomach",
+    "cz_text": "Hmm, Bob vypadá velmi lahodně. A připravuje si nějakou omáčku nebo krém na zamaskování nedokonalostí na svém těle.",
+    "en_text": "Hmm, Bob looks very delicious. And he is preparing some sauce or cream to mask the imperfections on his body.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 11,
+    "character": "Vypravec",
+    "cz_text": "Bob vezme kečup a hořčici. Zmáčkne láhev kečupu velmi silně. Plesk! Červený kečup letí přes místnost. Zasáhne Alici přímo na nos. Bob se na ni podívá a usměje se. \"Perfektní,\" řekne. \"Vypadáš jako jahoda!\"",
+    "en_text": "Bob takes the ketchup and the mustard. He squeezes the ketchup bottle very hard. Splat! The red ketchup flies across the room. It hits Alice right on the nose. Bob looks at her and smiles. \"Perfect,\" he says. \"You look like a strawberry!\"",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 12,
+    "character": "Alice",
+    "cz_text": "Hej Bobe, vylepšil jsi můj outfit. Teď moje šaty vypadají, jako by byly z filmu Pulp Fiction.",
+    "en_text": "Hey Bob, you improved my outfit. Now my dress looks like it is from the movie Pulp Fiction.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 13,
+    "character": "Bob",
+    "cz_text": "Ah, promiň! Můžeš to slízat jako předkrm.",
+    "en_text": "Ah, sorry! You can lick it off as an appetizer.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 14,
+    "character": "AliceStomach",
+    "cz_text": "Ano, udělej to! Bude to dobrý barevný trénink na snědení Boba. Jeho krev bude pravděpodobně stejná.",
+    "en_text": "Yes, do it! It will be good color training for eating Bob. His blood will probably be the same.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 15,
+    "character": "Vypravec",
+    "cz_text": "Alice si pomalu otře kečup z nosu. Zírá na Boba s velmi širokýma, temnýma očima. Bob se přestane usmívat. Podívá se na svůj starý banán a pak se podívá na Alici. Poprvé cítí trochu strach. Udělá krok vzad a drží banán jako meč.",
+    "en_text": "Alice slowly wipes the ketchup from her nose. She stares at Bob with very wide, dark eyes. Bob stops smiling. He looks at his old banana, and then he looks at Alice. For the first time, he feels a little bit afraid. He takes a step back and holds the banana like a sword.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 16,
+    "character": "Bob",
+    "cz_text": "Tajemství nejlepšího receptu je v tom, jak chytíte a použijete ingredience. Jen okamžik a bude to hotové!",
+    "en_text": "The secret of the best recipe is how you catch and use the ingredients. Just a moment and it will be done!",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 17,
+    "character": "Alice",
+    "cz_text": "Bobe, zbývá ti pár vteřin na přípravu jídla. Pravděpodobně už nebudu mít dost síly na to, abych ovládla svůj žaludek.",
+    "en_text": "Bob, you have a few seconds left to prepare the food. I will probably not have enough power to control my stomach anymore.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 18,
+    "character": "AliceStomach",
+    "cz_text": "Jedna, dvě, žaludek si jde pro tebe. Tři, čtyři, Bob bude nabodnut na strom a spálen jako bankovní poplatek!",
+    "en_text": "One, two, the stomach is coming for you. Three, four, Bob will be impaled on a tree and burned like a banking fee!",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 19,
+    "character": "Vypravec",
+    "cz_text": "Bob je v absolutní panice. Ohání se svým ochranným banánem, ale ten se zlomí napůl a spadne na zem. Podívá se na kečup, podívá se na zlomený banán a pak udělá jedinou logickou věc. Popadne historický román o lyžování, vyhodí ho z otevřeného okna a zakřičí: \"Podívej, Alice! Létající pizza!\" Zatímco se Alice podívá jinam, Bob utíká jako o život.",
+    "en_text": "Bob is in absolute panic. He swings his protective banana, but it breaks in half and falls on the floor. He looks at the ketchup, he looks at the broken banana, and then he does the only logical thing. He grabs the historical novel about skiing, throws it out of the open window, and screams: \"Look, Alice! A flying pizza!\" While Alice looks away, Bob runs for his life.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 20,
+    "character": "Alice",
+    "cz_text": "Nedokážu to ovládat!",
+    "en_text": "I am not able to control it!",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 21,
+    "character": "AliceStomach",
+    "cz_text": "Ham, ham! Bob chutná jako šunka!",
+    "en_text": "Nom, nom! Bob tastes like ham!",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 22,
+    "character": "Bob",
+    "cz_text": "Musím vypadat nejedle! Musím strčit knihu Alici do pusy a zapřít ji, aby ji nemohla zavřít!",
+    "en_text": "I must look inedible! I have to put a book into Alice's mouth and wedge it open so she can't close it!",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 23,
+    "character": "Vypravec",
+    "cz_text": "Bob přestane utíkat. Popadne velkou, těžkou kuchařku ze stolu. Skočí směrem k Alici jako kuchyňský ninja. Alice otevře pusu velmi doširoka, připravená ho kousnout. Prásk! Bob zaklíní tlustou kuchařku přímo mezi její zuby. Alice ztuhne. Vypadá velmi zmateně. Najednou se kniha rozlomí napůl a žaludek sežere Alici a Boba dohromady! Kuchyně se stane velmi tichým místem. Z dálky v pozadí se ozve tichý hlásek: \"Dobrý den, pizza je tady!\"",
+    "en_text": "Bob stops running. He grabs the big, heavy recipe book from the table. He jumps towards Alice like a kitchen ninja. Alice opens her mouth very wide, ready to bite him. Bam! Bob wedges the thick recipe book right between her teeth. Alice freezes. She looks very confused. Suddenly, the book breaks in half and the stomach eats Alice and Bob together! The kitchen becomes a very quiet place. From the distance in the background, a tiny voice says: \"Hello, the pizza is here!\"",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 24,
+    "character": "AliceStomach",
+    "cz_text": "Jedna, dvě, pizza jde. Tři, čtyři, poslíček s pizzou projde mým krkem.",
+    "en_text": "One, two, pizza, go. Three, four, the pizza man will go through my throat.",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 25,
+    "character": "Vypravec",
+    "cz_text": "Konec příběhu...???",
+    "en_text": "End of the story...???",
+    "dramaturgy": "normal",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  },
+  {
+    "id": 26,
+    "character": "AliceStomach",
+    "cz_text": "No to určitě! Já se vrátím! a semnou přijde hladomor :-)",
+    "en_text": "Yeah, right! I will be back! And famine comes with me...",
+    "dramaturgy": "slow",
+    "voice_before": null,
+    "sfx": null,
+    "voice_after": null
+  }
+  ]
+}

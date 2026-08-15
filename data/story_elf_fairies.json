@@ -1,0 +1,139 @@
+{
+  "story_info": {
+    "title": "Story about Elf and Fairies",
+    "author": "Eliška a taťulda"
+  },
+  "characters": {
+    "Vypravec": {
+      "default_voice": "en_US-joe-medium.onnx"
+    },
+    "Elf": {
+      "default_voice": "en_US-ryan-medium.onnx"
+    },
+    "Vila": {
+      "default_voice": "en_US-amy-medium.onnx"
+    }
+  },
+  "timeline": [
+    {
+      "id": 1,
+      "character": "Vypravec",
+      "en_text": "Once upon a time, there was a forest where magical creatures lived.",
+      "cz_text": "Byl jednou jeden les, ve kterém žily magické bytosti.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "sfx_forest.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 2,
+      "character": "Vypravec",
+      "en_text": "The arrogant elf went to steal a rare fruit from a sacred place. This place was guarded by blood fairies.",
+      "cz_text": "Namyšlený elf šel ukrást vzácný plod z posvátného místa. Toto místo hlídali krvavé víly.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "sfx_forest.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 3,
+      "character": "Vypravec",
+      "en_text": "The elf wants to steal the rare fruit because it will give him strength in battle.",
+      "cz_text": "Elf chce ukrást vzácný plod, protože mu bude dodávat sílu v boji.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "sfx_forest.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 4,
+      "character": "Elf",
+      "en_text": "I am finally here! I am coming for you, sweet fruit!!!",
+      "cz_text": "Konečně jsem tu, jdu si pro tebe, sladký plode!!!",
+      "dramaturgy": "normal",
+      "voice_before": "footsteps.mp3",
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 5,
+      "character": "Vypravec",
+      "en_text": "The fairies noticed the enemy who wanted to steal their fruit.",
+      "cz_text": "Víly si všimli nepřítele, který jim chce ukrást jejich ovoce.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 6,
+      "character": "Vila",
+      "en_text": "Leave this place, or we will use a spell from our wand!!!",
+      "cz_text": "Běž pryč z tohto místa nebo na tebe použijeme kouzlo z naší hůlky!",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "sfx_drama.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 7,
+      "character": "Elf",
+      "en_text": "How dare you threaten me? I have poisoned arrows!!!",
+      "cz_text": "Jak se opovažujete mi vyhrožovat? Mám otrávené šípy!!!",
+      "dramaturgy": "fast",
+      "voice_before": null,
+      "sfx": "sfx_drama.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 8,
+      "character": "Vypravec",
+      "en_text": "The elf put an arrow in his bow and shot it at the fairy.",
+      "cz_text": "Elf nasadil šíp do luku a střelil po víle.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "sfx_drama.mp3",
+      "voice_after": "letici_sip.mp3"
+    },
+    {
+      "id": 9,
+      "character": "Vypravec",
+      "en_text": "The fairy was hit by an arrow and died. The other fairies attacked the elf.",
+      "cz_text": "Víla byla zasažena šípem a umřela. Ostatní víly zaútočili na elfa.",
+      "dramaturgy": "normal",
+      "voice_before": "blood_scream.mp3",
+      "sfx": "sfx_drama.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 10,
+      "character": "Vila",
+      "en_text": "You shitty elf!!! I am turning you into a slug. A slug you will be until the end of your miserable life!",
+      "cz_text": "Ty zasxaný elfe!!! Proměnuji tě na slimáka. Slimákem budeš do konce svého bídného života.",
+      "dramaturgy": "fast",
+      "voice_before": null,
+      "sfx": "sfx_drama.mp3",
+      "voice_after": "magic_spel.mp3"
+    },
+    {
+      "id": 11,
+      "character": "Elf",
+      "en_text": "Uh-oh, my brain is so small now that I can't even put together a single sentence! My daddy will declare war on you!!!",
+      "cz_text": "Ajaj, teď mám tak malý mozek, že nedám dohromady ani jednu větu. Tatínek vám vyhlásí válku!!!",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": "sfx_drama.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 12,
+      "character": "Vypravec",
+      "en_text": "Ever since then, this slimy elf eats only grass. And dear children, you should look around the garden to see if there is a slug with pointy ears. And if so, definitely stomp him into the ground!",
+      "cz_text": "Od té doby, teno slizký elf žere jen trávu. A milé děti, měli byste se porozhlídnout po zahradě jestli tam není slimák se špičatýma ušima. A pokud ano, tak ho rozhoně zadupejte do země.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": "zadupnuti.mp3"
+    }
+  ]
+}

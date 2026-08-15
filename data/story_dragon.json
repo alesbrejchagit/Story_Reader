@@ -1,0 +1,69 @@
+{
+  "story_info": {
+    "title": "Odvážný rytíř a drak",
+    "author": "Tatínek / Alda"
+  },
+  "characters": {
+    "Vypravec": {
+      "default_voice": "en_US-amy-medium.onnx"
+    },
+    "Rytir": {
+      "default_voice": "en_US-ryan-medium.onnx"
+    },
+    "Drak": {
+      "default_voice": "en_US-joe-medium.onnx"
+    }
+  },
+  "timeline": [
+    {
+      "id": 1,
+      "character": "Vypravec",
+      "en_text": "Once upon a time, a brave knight stood before a dark cave.",
+      "cz_text": "Byl jednou jeden odvážný rytíř, který stál před temnou jeskyní.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "wind.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 2,
+      "character": "Rytir",
+      "en_text": "Is anyone there? I am not afraid!",
+      "cz_text": "Je tam někdo? Nebojím se!",
+      "dramaturgy": "normal",
+      "voice_before": "footsteps.mp3",
+      "sfx": "wind.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 3,
+      "character": "Drak",
+      "en_text": "Who dares to wake me up?!",
+      "cz_text": "Kdo se opovažuje mě probudit?!",
+      "dramaturgy": "slow",
+      "voice_before": "drak.mp3",
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 4,
+      "character": "Rytir",
+      "en_text": "Oh no, a real dragon! I must run!",
+      "cz_text": "Ale ne, opravdový drak! Musím utíkat!",
+      "dramaturgy": "fast",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": "running_away.mp3"
+    },
+    {
+      "id": 5,
+      "character": "Vypravec",
+      "en_text": "And the knight ran all the way home.",
+      "cz_text": "A rytíř utíkal až domů.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    }
+  ]
+}

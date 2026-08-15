@@ -1,0 +1,29 @@
+{
+  "stories": [
+    {
+      "json_file": "story_dragon.json",
+      "title": "Odvážný rytíř a drak",
+      "sound_dir": "dragon"
+    },
+    {
+      "json_file": "story_frog.json",
+      "title": "O zakleté žábě",
+      "sound_dir": "frog"
+    },
+    {
+      "json_file": "story_cat_dog.json",
+      "title": "Pejsek a Kočička",
+      "sound_dir": "cat_dog"
+    },
+    {
+      "json_file": "story_elf_fairies.json",
+      "title": "Story about Elf and Fairies",
+      "sound_dir": "elf_fairies"
+    },
+    {
+      "json_file": "Bob_Alice_Stomach.json",
+      "title": "Bob is cooking for Alica's stomach",
+      "sound_dir": "alice_stomach"
+    }
+  ]
+}
