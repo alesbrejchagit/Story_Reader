@@ -1,0 +1,5 @@
+# Ignoruje všechny složky jménem WAV a jejich obsah kdekoliv v projektu
+WAV/
+
+# Pro jistotu ignoruje i všechny osamocené wav soubory kdekoliv jinde
+*.wav
