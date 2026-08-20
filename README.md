@@ -19,6 +19,7 @@ Stačí kliknout na tento odkaz: **[(https://alesbrejchagit.github.io/Story_Read
 ## 🛠️ Použité technologie
 * **HTML5**,* **CSS3**,* **JavaScript**
 * **JSON** pro uchovávání textů příběhů a mapování zvukových stop
+* **Pipper voices** - voice sounds
 
 ## 📂 Struktura dat
-Příběhy se načítají dynamicky ze souboru `library_web.json`. Každý příběh má pak svůj vlastní JSON soubor obsahující časovou osu (timeline) a odkazy na konkrétní  `.mp3` soubory pro hlasy a zvukové efekty (SFX).
+Příběhy se načítají dynamicky ze souboru `library_web.json`. Každý příběh má pak svůj vlastní JSON soubor obsahující časovou osu (timeline) a odkazy na konkrétní  `.mp3` soubory pro hlasy a zvukové efekty (SFX - (https://pixabay.com/sound-effects/), Piktograms/Icons - (https://www.flaticon.com/icons) ).
