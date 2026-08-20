@@ -16,6 +16,11 @@
       "sound_dir": "cat_dog"
     },
     {
+      "json_file": "lesni_zelenina.json",
+      "title": "Lesní zelenina/Veggie shop",
+      "sound_dir": "veggie_shop"
+    },
+    {
       "json_file": "story_elf_fairies.json",
       "title": "Story about Elf and Fairies",
       "sound_dir": "elf_fairies"

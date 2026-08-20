@@ -1,0 +1,192 @@
+{
+  "story_info": {
+    "title": "Prodejna zeleniny",
+    "author": "Alda"
+  },
+  "characters": {
+    "Vypravec": {
+      "default_voice": "en_US-ryan-medium.onnx"
+    },
+    "Rabbit": {
+      "default_voice": "en_US-joe-medium.onnx"
+    },
+    "Customer": {
+      "default_voice": "en_US-amy-medium.onnx"
+    },
+    "Goat": {
+      "default_voice": "en_US-lessac-high.onnx"
+    }
+  },
+  "timeline": [
+    {
+      "id": 1,
+      "character": "Vypravec",
+      "en_text": "At the edge of the fairy-tale forest, the wild animals decided to open a vegetable shop. The first customer is coming into their little shop.",
+      "cz_text": "Na kraji pohádkového lesa se divoká zvířátka rozhodla otevřít prodejnu zeleniny. Do jejich obchůdku přichází první zákazník.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": "eating_carot.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 2,
+      "character": "Rabbit",
+      "en_text": "Hmm, I will arrange it nicely here. Sweet carrots, apples, and radishes. The carrot, yum that is my top product. It is very delicious! It's a pity to sell it, maybe I will eat it all myself. Well, maybe I'll leave some leftovers for the customers.",
+      "cz_text": "Hmm, pěkně si to tady naaranžuji. Slaďoučké mrkvičky, jablíčka a ředkvičky. Mrkvička, mňam, to je můj top produkt. Je moc dobrá, škoda ji prodávat, asi ji sním celou sám. Mno, možná nějaké zbytky nechám zákazníkům.",
+      "dramaturgy": "normal",
+      "voice_before": "pokladna.mp3",
+      "sfx": "eating_carot.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 3,
+      "character": "Customer",
+      "en_text": "Good morning...",
+      "cz_text": "Dobrý den...",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "eating_carot.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 4,
+      "character": "Vypravec",
+      "en_text": "Rabbit keeps eating and suddenly chokes.",
+      "cz_text": "Králík pořád jí a najednou se zakucká.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 5,
+      "character": "Vypravec",
+      "en_text": "The rabbit is startled, hides the carrot behind his back, and starts coughing.",
+      "cz_text": "Králík se lekne, schová mrkev za svá záda a začne kašlat.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": "kasel_kratky.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 6,
+      "character": "Customer",
+      "en_text": "Excuse me, are you okay? And why is there a green carrot top sticking out from behind your back? I thought you were selling vegetables, not eating them! I would like to buy some carrots.",
+      "cz_text": "Promiňte, jste v pořádku? A proč vám zpoza zad kouká zelená mrkvová nať? Myslela jsem, že zeleninu prodáváte, a ne že ji jíte! Ráda bych si nějakou koupila.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": "kasel_kratky.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 7,
+      "character": "Vypravec",
+      "en_text": "The rabbit, with a mouth full of carrot, stops chewing, twitches a single whisker, and spits it all out onto the customer.",
+      "cz_text": "Králík se stále narvanou pusou mrkve, přestane žvýkat, lehce cukne jedním vouskem a pak to vše vyprskne na zákaznici.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": "splac_mokry_2.mp3"
+    },
+    {
+      "id": 8,
+      "character": "Rabbit",
+      "en_text": "Anything else, or how else can I help you?",
+      "cz_text": "Něco dalšího, nebo jak vám můžu dále posloužit?",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": "uprdnuti.mp3"
+    },
+    {
+      "id": 9,
+      "character": "Customer",
+      "en_text": "Are you kidding me?! Now I look like minced carrot! I can throw my dress straight into a vegetable broth! And as I can see, you only have half-eaten carrots on the counter. Don't you have anything untouched in stock?",
+      "cz_text": "No to si snad děláte legraci?! Teď vypadám jak namletá mrkev! A šaty můžu dát rovnou do zeleninového vývaru! A jak koukám, na pultu máte jen nakousanou mrkev. To nemáte na skladě něco nenakousaného?",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 10,
+      "character": "Rabbit",
+      "en_text": "Yes, madam, now you can make a fine demi-glace soup. We have some other carrots in the back, but I do not recommend them, because I haven't tasted them yet!",
+      "cz_text": "Ano, madam, teď si můžete udělat skvělou demi-glace polévku. Vzadu máme nějaké další mrkve, ale nedoporučuji je, protože jsem je zatím neochutnal!",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 11,
+      "character": "Customer",
+      "en_text": "Oh well, since I am already here, give me a head of cabbage. Hopefully, it is not bitten into!",
+      "cz_text": "Ach jo, no když už jsem tady, tak mi dejte hlávku zelí. To snad nakousané nebude!",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 12,
+      "character": "Rabbit",
+      "en_text": "Ahhh, that's a no-go. My boss has a strict monopoly on cabbage here. To me, cabbage is garbage.",
+      "cz_text": "Aaaa, tak to nepůjde. Na zelí má tady přísný monopol jen moje šéfová. Pro mě je zelí odpad.",
+      "dramaturgy": "normal",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 13,
+      "character": "Vypravec",
+      "en_text": "Suddenly, the back door bursts open. A Goat wearing a manager's badge walks in. She is loudly chewing on a huge head of cabbage.",
+      "cz_text": "Najednou se rozletí zadní dveře. Vejde Koza s manažerskou jmenovkou. Hlasitě žvýká obrovskou hlávku zelí.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 14,
+      "character": "Goat",
+      "en_text": "Get lost, you greedy rabbit!  Yes, madam, I am already preparing the cabbage for you. It will be nicely sliced into small pieces, so you won't even have to chew it!",
+      "cz_text": "Ztrať se, ty nenažranej králíku! Ano, madam, zelíčko už pro vás připravuji a bude krásně nakrájené na malé kousky, takže ho nebudete muset ani žvýkat!",
+      "dramaturgy": "normal",
+      "voice_before": "rozbit_drevo.mp3",
+      "sfx": "kousani.mp3",
+      "voice_after": null
+    },
+    {
+      "id": 15,
+      "character": "Vypravec",
+      "en_text": "But the Goat's words about the nicely sliced cabbage were heard only by the open shop door. In the distance, there was only a running figure, sprinting towards the city.",
+      "cz_text": "Ale slova kozy o krásně nakrájeném zelí už slyšely jen otevřené dveře prodejny. V dáli byla vidět pouze utíkající postava, která pádila k městu.",
+      "dramaturgy": "slow",
+      "voice_before": "running_away.mp3",
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 16,
+      "character": "Goat",
+      "en_text": "No way, these vegetables are not for humans!",
+      "cz_text": "Mé! To by tak hrálo, aby nám tu zeleninu jedli lidé!",
+      "dramaturgy": "normal",
+      "voice_before": "kousani.mp3",
+      "sfx": null,
+      "voice_after": null
+    },
+    {
+      "id": 17,
+      "character": "Vypravec",
+      "en_text": "...said the little goat wisely.",
+      "cz_text": "...pravila moudře kozička.",
+      "dramaturgy": "slow",
+      "voice_before": null,
+      "sfx": null,
+      "voice_after": null
+    }
+  ]
+}
